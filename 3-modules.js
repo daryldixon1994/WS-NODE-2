@@ -1,7 +1,5 @@
 //Modules : uses CommonJS, every file is module by default
+const { sayHi } = require("./5-utils");
+const {names} = require("./4-names");
 
-let { userOne, userTwo, userThree } = require("./4-names");
-let sayHi = require("./5-utils");
-// console.log(sayHi(userOne));
-
-console.log(sayHi(userOne));
+console.log(sayHi(names.Ghada));

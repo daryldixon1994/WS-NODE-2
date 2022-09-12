@@ -9,9 +9,9 @@ const os = require("os");
 // console.log(os.version())
 
 // info about the system uptime in seconds
-
-// info about the type of the operating system
 // console.log(os.uptime());
 
+// info about the type of the operating system
+// console.log(os.type());
 // info about the system release
-// console.log(os.release());
+console.log(os.release());

@@ -1,1 +1,1 @@
-hello this is the second text
+THIS IS THE SECOND TEXT ASYNC

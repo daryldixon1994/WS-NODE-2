@@ -1,5 +1,7 @@
-let userOne = "Anwar";
-let userTwo = "Jihen";
-let userThree = "Sawssen";
+const names = {
+    Anwar: "Anwar",
+    Ala: "Ala",
+    Ghada: "Ghada",
+};
 
-module.exports = { userOne, userTwo, userThree };
+module.exports.names = names;

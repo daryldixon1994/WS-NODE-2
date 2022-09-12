@@ -2,7 +2,7 @@ const http = require("http");
 var path = require("path");
 const fs = require("fs");
 const server = http.createServer((req, res) => {
-    // console.log(req.url);
+    console.log(req.url);
 
     // fs.readFile("./content/index.html", "utf8", (err, data) => {
     //     if (err) throw err;

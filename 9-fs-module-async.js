@@ -1,25 +1,24 @@
-// read files asynchronously > callback function is called when we are done
 const fs = require("fs");
+const path = require("path");
 
-console.log("taskt starts");
-// create new file asynchronously
-fs.readFile("./content/file.txt", "utf-8", (err, data) => {
+//read file synchronously
+const firstPath = path.resolve("content", "first.txt");
+const secondPath = path.resolve("content", "second.txt");
+const thirdPath = path.resolve("content", "third.txt");
+
+fs.readFile(firstPath, "utf-8", (err, first) => {
     if (err) throw err;
-    let firstText = data;
-    fs.readFile("./content/file.txt", "utf-8", (err, data) => {
+
+    fs.readFile(secondPath, "utf-8", (err, second) => {
         if (err) throw err;
-        let secondText = data;
         fs.writeFile(
-            "./content/third.txt",
-            `${firstText}, ${secondText}`,
-            {
-                flag: "a",
-            },
-            (err) => {
+            thirdPath,
+            `${first} ${second}`,
+            { flag: "a+" },
+            (err, data) => {
                 if (err) throw err;
             }
         );
     });
 });
-console.log("next task");
-// apend text => flag object
+// read files asynchronously > callback function is called when we are done

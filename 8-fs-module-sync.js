@@ -1,29 +1,14 @@
 // read files synchronously
 const fs = require("fs");
 const path = require("path");
-// create new file synchronously
-async function files() {
-    console.log("task starts");
-    try {
-        const textOne = await fs.readFileSync("./content/file.txt", "utf8");
-        const textTwo = await fs.readFileSync("./content/second.txt", "utf8");
+//readFile synchronously
+const firstPath = path.resolve("content", "first.txt");
+const secondPath = path.resolve("content", "second.txt");
+const thirdPath = path.resolve("content", "third.txt");
 
-        await fs.writeFileSync(
-            "./content/third.txt",
-            `${textOne} , ${textTwo}`,
-            {
-                flag: "a",
-            }
-        );
-        const textThree = await fs.readFileSync("./content/third.txt", "utf-8");
-        await fs.writeFileSync("./content/third.txt", "final text", {
-            flag: "a",
-        });
-        console.log("tasks finished");
-    } catch (error) {
-        if (error) throw error;
-    }
-}
-// apend text => flag object
-files();
-console.log("next task");
+const firstText = fs.readFileSync(firstPath, "utf-8");
+const secondText = fs.readFileSync(secondPath, "utf-8");
+const thirdText = fs.writeFileSync(thirdPath, "hello world", { flag: "r+" });
+console.log(firstText);
+console.log(secondText);
+// create new file synchronously
